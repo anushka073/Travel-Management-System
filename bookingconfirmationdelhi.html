@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="bookingconfirmation.css">
+</head>
+<body>
+    <header>
+        <h1>Booking Confirmation</h1>
+    </header>
+
+    <main>
+        <section class="booking-details">
+            <h2>Your Booking Details</h2>
+            <form id="confirmationForm" action="save_booking.php" method="POST">
+                <div id="detailsContainer">
+                    <p><strong>Destination:</strong> <span id="destination"></span></p>
+                    <p><strong>Hotel Name:</strong> <span id="hotelName"></span></p>
+                    <p><strong>Number of Rooms:</strong> <span id="numberOfRooms"></span></p>
+                    <p><strong>Number of Adults:</strong> <span id="numberOfAdults"></span></p>
+                    <p><strong>Number of Children:</strong> <span id="numberOfChildren"></span></p>
+                    <p><strong>Check-in Date:</strong> <span id="checkInDate"></span></p>
+                    <p><strong>Check-out Date:</strong> <span id="checkOutDate"></span></p>
+                    <p><strong>Amount per Night:</strong> <span id="amountPerNight"></span></p>
+                    <p><strong>Total Price:</strong> <span id="totalPrice"></span></p>
+                    <input type="hidden" name="destination" id="destinationInput">
+                    <input type="hidden" name="hotelName" id="hotelNameInput">
+                    <input type="hidden" name="numberOfRooms" id="numberOfRoomsInput">
+                    <input type="hidden" name="numberOfAdults" id="numberOfAdultsInput">
+                    <input type="hidden" name="numberOfChildren" id="numberOfChildrenInput">
+                    <input type="hidden" name="checkInDate" id="checkInDateInput">
+                    <input type="hidden" name="checkOutDate" id="checkOutDateInput">
+                    <input type="hidden" name="amountPerNight" id="amountPerNightInput">
+                    <input type="hidden" name="totalPrice" id="totalPriceInput">
+                    <button type="submit">Confirm Booking</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Delhi Hotel Booking. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            document.getElementById('destination').textContent = urlParams.get('destination');
+            document.getElementById('hotelName').textContent = urlParams.get('hotelName');
+            document.getElementById('numberOfRooms').textContent = urlParams.get('numberOfRooms');
+            document.getElementById('numberOfAdults').textContent = urlParams.get('numberOfAdults');
+            document.getElementById('numberOfChildren').textContent = urlParams.get('numberOfChildren');
+            document.getElementById('checkInDate').textContent = urlParams.get('checkInDate');
+            document.getElementById('checkOutDate').textContent = urlParams.get('checkOutDate');
+            document.getElementById('amountPerNight').textContent = `Rupees ${urlParams.get('amountPerNight')}`;
+            document.getElementById('totalPrice').textContent = `Rupees ${urlParams.get('totalPrice')}`;
+
+            document.getElementById('destinationInput').value = urlParams.get('destination');
+            document.getElementById('hotelNameInput').value = urlParams.get('hotelName');
+            document.getElementById('numberOfRoomsInput').value = urlParams.get('numberOfRooms');
+            document.getElementById('numberOfAdultsInput').value = urlParams.get('numberOfAdults');
+            document.getElementById('numberOfChildrenInput').value = urlParams.get('numberOfChildren');
+            document.getElementById('checkInDateInput').value = urlParams.get('checkInDate');
+            document.getElementById('checkOutDateInput').value = urlParams.get('checkOutDate');
+            document.getElementById('amountPerNightInput').value = urlParams.get('amountPerNight');
+            document.getElementById('totalPriceInput').value = urlParams.get('totalPrice');
+        });
+    </script>
+</body>
+</html>

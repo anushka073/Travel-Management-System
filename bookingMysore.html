@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysore Hotel Booking</title>
+    <link rel="stylesheet" href="goastyles.css">
+</head>
+<body>
+    <header>
+        <h1>Book Your Stay in Mysore</h1>
+    </header>
+
+    <main>
+        <section class="booking-form">
+            <h2>Hotel Booking Details</h2>
+            <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                
+                <input type="hidden" name="destination" value="Mysore">
+
+                <label for="hotelName">Hotel Name:</label>
+                <select id="hotelName" name="hotelName" required onchange="updateAmountPerNight()">
+                    <option value="">Select Hotel</option>
+                    <option value="Hotel MB International" data-amount="1500">Hotel MB International</option>
+                    <option value="Hotel Rupa" data-amount="2000">Hotel Rupa</option>
+                    <option value="Hotel Mourya Palace" data-amount="1800">Hotel Mourya Palace</option>
+                    <option value="Green Orchid Resorts" data-amount="2500">Green Orchid Resorts</option>
+                    <!-- Add more options as needed with fixed amounts per night -->
+                </select><br><br>
+
+                <label for="numberOfAdults">Number of Adults:</label>
+                <select id="numberOfAdults" name="numberOfAdults" required onchange="checkOccupancy()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <!-- Add more options as needed -->
+                </select><br><br>
+
+                <label for="numberOfChildren">Number of Children (0-17 years old):</label>
+                <select id="numberOfChildren" name="numberOfChildren" required onchange="checkOccupancy()">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <!-- Add more options as needed -->
+                </select><br><br>
+
+                <label for="numberOfRooms">Number of Rooms:</label>
+                <input type="text" id="numberOfRooms" name="numberOfRooms" readonly required><br><br>
+                <div id="notification"></div><br>
+
+                <label for="checkInDate">Check-in Date (12:00 PM):</label>
+                <input type="date" id="checkInDate" name="checkInDate" onchange="calculateTotalPrice()" required><br><br>
+
+                <label for="checkOutDate">Check-out Date (11:00 AM):</label>
+                <input type="date" id="checkOutDate" name="checkOutDate" onchange="calculateTotalPrice()" required><br><br>
+
+                <label for="amountPerNight">Amount per Night:</label>
+                <input type="text" id="amountPerNight" name="amountPerNight" readonly required><br><br>
+
+                <label for="totalPrice">Total Price:</label>
+                <input type="text" id="totalPrice" name="totalPrice" readonly required><br><br>
+
+                <button type="submit">Book Now</button>
+                
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mysore Hotel Booking. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateAmountPerNight() {
+            const hotelSelect = document.getElementById('hotelName');
+            const amountPerNightInput = document.getElementById('amountPerNight');
+            
+            const selectedOption = hotelSelect.options[hotelSelect.selectedIndex];
+            const amountPerNight = parseFloat(selectedOption.getAttribute('data-amount'));
+            
+            amountPerNightInput.value = amountPerNight;
+            calculateTotalPrice();  // Recalculate total price when the hotel changes
+        }
+
+        function checkOccupancy() {
+            const numberOfAdults = parseInt(document.getElementById('numberOfAdults').value);
+            const numberOfChildren = parseInt(document.getElementById('numberOfChildren').value);
+
+            const maxAdultsPerRoom = 2;
+            const maxChildrenPerRoom = 3;
+
+            const requiredRoomsForAdults = Math.ceil(numberOfAdults / maxAdultsPerRoom);
+            const requiredRoomsForChildren = Math.ceil(numberOfChildren / maxChildrenPerRoom);
+
+            const requiredRooms = Math.max(requiredRoomsForAdults, requiredRoomsForChildren);
+
+            document.getElementById('numberOfRooms').value = requiredRooms;
+
+            if (numberOfAdults > maxAdultsPerRoom || numberOfChildren > maxChildrenPerRoom) {
+                document.getElementById('notification').textContent = "Note: Only 2 adults and 3 children can be accommodated per room.";
+            } else {
+                document.getElementById('notification').textContent = "";
+            }
+
+            calculateTotalPrice();
+        }
+
+        function calculateTotalPrice() {
+            const checkInDate = new Date(document.getElementById('checkInDate').value);
+            const checkOutDate = new Date(document.getElementById('checkOutDate').value);
+            const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+            const numberOfNights = Math.round((checkOutDate - checkInDate) / oneDay);
+            
+            if (!isNaN(numberOfNights) && numberOfNights >= 0) {
+                const amountPerNight = parseFloat(document.getElementById('amountPerNight').value);
+                const numberOfRooms = parseInt(document.getElementById('numberOfRooms').value);
+                const totalPrice = amountPerNight * numberOfNights * numberOfRooms;
+                document.getElementById('totalPrice').value = totalPrice.toFixed(2);
+            } else {
+                document.getElementById('totalPrice').value = '0.00';
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+            const hotelName = document.getElementById('hotelName').value;
+            const numberOfRooms = document.getElementById('numberOfRooms').value;
+            const numberOfAdults = document.getElementById('numberOfAdults').value;
+            const numberOfChildren = document.getElementById('numberOfChildren').value;
+            const checkInDate = document.getElementById('checkInDate').value;
+            const checkOutDate = document.getElementById('checkOutDate').value;
+            const amountPerNight = document.getElementById('amountPerNight').value;
+            const totalPrice = document.getElementById('totalPrice').value;
+
+            // Construct the query string
+            const queryString = `?destination=Mysore&hotelName=${hotelName}&numberOfRooms=${numberOfRooms}&numberOfAdults=${numberOfAdults}&numberOfChildren=${numberOfChildren}&checkInDate=${checkInDate}&checkOutDate=${checkOutDate}&amountPerNight=${amountPerNight}&totalPrice=${totalPrice}`;
+            
+            // Redirect to the booking confirmation page with the query string
+            window.location.href = 'bookingconfirmationmysore.html' + queryString;
+        }
+    </script>
+</body>
+</html>
