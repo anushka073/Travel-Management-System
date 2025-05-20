@@ -1,29 +1,98 @@
-# Tourism-Management-System
+Based on the contents of the files `Travel_Draft.zip` and `DBMS MINI PROJECT FINAL.pdf`, here is a professional `README.md` file suitable for your GitHub repository:
 
-This is a Tourism Management System Project build by using html, css, javascript, php, MySQL as mini project in the 5th semister of engineering.
-This website has cool SignUp/SignIn page where you can enter your details and SignUp.
-It stores your data in the database using php and MySQL queries.
-This website has a cool front page where you can see many destinations, you can also get the data about each place.
-There is also a galery section where you can see the beautifull pictures of all the destinations.
-This website also has the admin login admin can get the information of the customers, travel agents, also can add new places, hotels.
-There is cool and nice booking page where you can book your tour by entering your details.
-This website also has a feedback section where you can give your feedback to the developer.
+---
 
-# New Changes
+# ✈️ Travel Management System
 
-improved performance
-login signup isssues fixed
-styling issues fixed
+A **Travel Management System** built as a mini project for the **Database Management Systems (DBMS)** course. This project facilitates the booking, viewing, and management of travel plans by both users and administrators. It features a clean HTML frontend and a MySQL database backend.
 
-# Use Procedure
+---
 
-please chanage the port number with your port number - I used 3307 as port number but for your case it may be 3306 please change that
+## 📌 Features
 
-please change username and password if that applicable to you
+### User Functionality
 
-create database called "travel", don't give any other name,
-if you want different name for database then make sure that you change database ame in code also
+* 🧾 **Book Tickets** for various destinations
+* 🔍 **View Booking History**
+* ❌ **Cancel Bookings**
+* 🧑 **Edit Profile Details**
+* 🔐 **Login / Sign Up** system
 
-database file also provided
+### Admin Functionality
 
-Thank You....
+* 📄 **View All Bookings**
+* 🛠 **Add / Remove Destinations**
+* 🧑‍💻 **Manage User Details**
+
+---
+
+## 🛠️ Technologies Used
+
+* **Frontend:** HTML, CSS
+* **Backend:** PHP
+* **Database:** MySQL
+
+---
+
+## 🧩 Database Design
+
+The system is powered by a normalized relational database that includes the following entities:
+
+* `users`
+* `bookings`
+* `destinations`
+* `admins`
+
+> For full details, refer to the [ER Diagram and Schema Design](./DBMS%20MINI%20PROJECT%20FINAL.pdf).
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/travel-management-system.git
+```
+
+### 2. Set Up the Environment
+
+* Install **XAMPP** or any PHP server environment
+* Move the project files to the `htdocs` folder
+
+### 3. Set Up the Database
+
+* Import the SQL file (`travel.sql`) into your local MySQL server using phpMyAdmin
+
+### 4. Launch the Application
+
+* Open your browser and go to `http://localhost/Travel_Draft/index.html`
+
+---
+
+## 📁 Project Structure
+
+```
+Travel_Draft/
+├── assets/
+│   ├── css/
+│   └── js/
+├── images/
+├── php/
+│   ├── connect.php
+│   └── booking_handler.php
+├── index.html
+├── login.html
+├── admin/
+│   └── dashboard.html
+```
+
+---
+
+## ✨ Authors
+
+* **Anushka Srivastava**
+* **B.Vamshi Nandhan Reddy**
+---
+
+
