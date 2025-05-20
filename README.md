@@ -1,6 +1,6 @@
 # ✈️ Travel Management System
 
-A **Travel Management System** built as a mini project for the **Database Management Systems (DBMS)** course. This project facilitates the booking, viewing, and management of travel plans by both users and administrators. It features a clean HTML frontend and a MySQL database backend.
+This project facilitates the booking, viewing, and management of travel plans by both users and administrators. It features a clean HTML frontend and a MySQL database backend.
 
 ---
 
@@ -39,8 +39,6 @@ The system is powered by a normalized relational database that includes the foll
 * `destinations`
 * `admins`
 
-> For full details, refer to the [ER Diagram and Schema Design](./DBMS%20MINI%20PROJECT%20FINAL.pdf).
-
 ---
 
 ## 🚀 Getting Started
@@ -63,6 +61,10 @@ git clone https://github.com/yourusername/travel-management-system.git
 ### 4. Launch the Application
 
 * Open your browser and go to `http://localhost/Travel_Management_System`
+
+---
+
+📄 [View Project Report (PDF)](documentation/Travel_Management_System.pdf)
 
 ---
 
