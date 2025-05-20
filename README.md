@@ -70,12 +70,12 @@ git clone https://github.com/yourusername/travel-management-system.git
 
 ---
 
-
-
-
 ## 👥 Team Members   
+
 🚀 [B. Vamshi Nandhan Reddy](https://github.com/VamshiNandhanReddy) 
+
 🚀 [Anushka Srivastava](https://github.com/anushka073) 
+
 
 📍 **Department of Artificial Intelligence & Machine Learning**  
 📍 **BMS Institute of Technology & Management, Bengaluru** 
