@@ -39,8 +39,6 @@ The system is powered by a normalized relational database that includes the foll
 * `destinations`
 * `admins`
 
-> For full details, refer to the [ER Diagram and Schema Design](./DBMS%20MINI%20PROJECT%20FINAL.pdf).
-
 ---
 
 ## 🚀 Getting Started
@@ -66,7 +64,7 @@ git clone https://github.com/yourusername/travel-management-system.git
 
 ---
 
-📄 [View Project Report (PDF)](docs/DBMS_Mini_Project_Report.pdf)
+📄 [View Project Report (PDF)](documentation/Travel_Management_System.pdf)
 
 ---
 
