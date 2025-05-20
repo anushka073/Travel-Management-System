@@ -65,6 +65,8 @@ git clone https://github.com/yourusername/travel-management-system.git
 ---
 
 📄 [View Project Report (PDF)](documentation/Travel_Management_System.pdf)
+📄 [View Schema and ER (PDF)](documentation/Schema_and_ER.pdf)
+🎥 [Watch Demo Video](documentation/Working_TMS.mp4)
 
 ---
 
