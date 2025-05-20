@@ -1,7 +1,3 @@
-Based on the contents of the files `Travel_Draft.zip` and `DBMS MINI PROJECT FINAL.pdf`, here is a professional `README.md` file suitable for your GitHub repository:
-
----
-
 # ✈️ Travel Management System
 
 A **Travel Management System** built as a mini project for the **Database Management Systems (DBMS)** course. This project facilitates the booking, viewing, and management of travel plans by both users and administrators. It features a clean HTML frontend and a MySQL database backend.
