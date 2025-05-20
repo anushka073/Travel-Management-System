@@ -66,33 +66,19 @@ git clone https://github.com/yourusername/travel-management-system.git
 
 ### 4. Launch the Application
 
-* Open your browser and go to `http://localhost/Travel_Draft/index.html`
+* Open your browser and go to `http://localhost/Travel_Management_System`
 
 ---
 
-## 📁 Project Structure
 
-```
-Travel_Draft/
-├── assets/
-│   ├── css/
-│   └── js/
-├── images/
-├── php/
-│   ├── connect.php
-│   └── booking_handler.php
-├── index.html
-├── login.html
-├── admin/
-│   └── dashboard.html
-```
 
----
 
-## ✨ Authors
+## 👥 Team Members   
+🚀 [B. Vamshi Nandhan Reddy](https://github.com/VamshiNandhanReddy) 
+🚀 [Anushka Srivastava](https://github.com/anushka073) 
 
-* **Anushka Srivastava**
-* **B.Vamshi Nandhan Reddy**
+📍 **Department of Artificial Intelligence & Machine Learning**  
+📍 **BMS Institute of Technology & Management, Bengaluru** 
 ---
 
 
