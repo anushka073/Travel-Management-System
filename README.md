@@ -66,6 +66,10 @@ git clone https://github.com/yourusername/travel-management-system.git
 
 ---
 
+📄 [View Project Report (PDF)](docs/DBMS_Mini_Project_Report.pdf)
+
+---
+
 ## 👥 Team Members   
 
 🚀 [B. Vamshi Nandhan Reddy](https://github.com/VamshiNandhanReddy) 
